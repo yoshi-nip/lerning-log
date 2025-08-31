@@ -30,7 +30,7 @@ export const Home = () => {
     setRecords(newRecords);
     setInputStudyResultTitle("");
     setInputStudyResultTime(0);
-    setTotalStudyTime((prev) => Number(prev) + Number(inputStudyResultTime));
+    setTotalStudyTime(newRecords.reduce((accumulator, record) => accumulator + parseInt(record.time), 0));
   };
 
   return (
